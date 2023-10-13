@@ -4,11 +4,9 @@ import telebot
 import mss
 from PIL import Image
 import subprocess
-import keyboard
 import sys
 import os
 import shutil
-import socket
 import winreg
 
 
