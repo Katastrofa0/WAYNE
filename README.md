@@ -1,7 +1,7 @@
 # WAYNE
-![Image alt](https://github.com/Katastrofa0//WAYNE/blob/main/wayne.png)
+![Image alt]([https://github.com/Katastrofa0//WAYNE/blob/main/wayne.png](https://github.com/Katastrofa0/WAYNE/blob/cc3f92e112e50f9d5928213381bbab36e3a93a45/wayne.png))
 
-Позволяет отправлять снимок экрана жертвы себе в телеграм.
+Позволяет отправлять снимок экрана цели себе в телеграм.
 
 
 ФУНКЦИИОНАЛ:
