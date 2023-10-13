@@ -1,4 +1,4 @@
-# СНИМОК ЭКРАНА ЦЕЛИ НА СВОЕГО ТЕЛЕГРАМ БОТА
+# СНИМОК ЭКРАНА ЦЕЛИ НА СВОЙ ТЕЛЕГРАМ БОТ
 ![Image alt](https://github.com/Katastrofa0/WAYNE/blob/cc3f92e112e50f9d5928213381bbab36e3a93a45/wayne.png)
 
 
