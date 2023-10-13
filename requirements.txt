@@ -1,0 +1,8 @@
+requests
+telebot
+mss
+Pillow
+keyboard
+io
+shutil
+winreg
